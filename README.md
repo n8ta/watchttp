@@ -5,6 +5,8 @@ Watch a list of webpages for changes at a set interval. Send system notifcations
 
 ![image of macOS notification](./images/notif.png)
 
+
+## Config Format
 ```yaml
 sites:
   - https://n8ta.com
@@ -12,6 +14,7 @@ sites:
 period_ms: 3600000
 ```
 
+## Usage
 ```shell
 cargo build --release
 ./target/release/watchttp ./config.yaml
