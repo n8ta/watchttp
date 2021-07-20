@@ -98,10 +98,15 @@ fn main() {
             };
             if let Some(old_body) = stored_versions.get(site) {
                 if old_body != &new_body {
+                    let difference = (new_body.len() as i64) - (old_body.len() as i64);
+                    let byte_or_bytes = match difference == 1 {
+                        true => "byte",
+                        false => "bytes"
+                    };
                     let message = match old_body.len().cmp(&new_body.len()) {
-                        Ordering::Less => format!("Got {} bytes larger", new_body.len() - old_body.len()),
+                        Ordering::Less => format!("Got {} {} larger", new_body.len() - old_body.len(), byte_or_bytes),
                         Ordering::Equal => format!("Is the same size but content changed"),
-                        Ordering::Greater => format!("Got {} bytes smaller", old_body.len() - new_body.len())
+                        Ordering::Greater => format!("Got {} {} smaller", old_body.len() - new_body.len(), byte_or_bytes)
                     };
                     send_notification(&format!("{} changed", site),
                                       &message[..]);
