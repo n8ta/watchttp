@@ -1,6 +1,9 @@
 # watchttp
-(
-atch a list of webpages for changes at a set interval. Send system notifcations when they change.
+![windows supported](https://img.shields.io/badge/windows-supported-brightgreen)
+![macOS supported](https://img.shields.io/badge/macOS-supported-brightgreen)
+![linus supported](https://img.shields.io/badge/linus-supported-brightgreen)
+
+Watch(ttp) a list of webpages for changes at a set interval. Send system notifcations when they change.
 
 ![image of macOS notification](./images/notif.png)
 
@@ -30,3 +33,6 @@ crontab -e
 2. `ureq = "2.1"` http requests
 3. `notify = "5.0.0-pre.10"` & `crossbeam-channel = "0.4.0"` config file hot-reloading
 4. `notify-rust = 4.0` OS notifications
+
+## Linux Support
+See the [notify-rust project readme](https://github.com/hoodie/notify-rust#linuxbsd-support)
