@@ -1,7 +1,7 @@
 # watchttp
 ![windows supported](https://img.shields.io/badge/windows-supported-brightgreen)
 ![macOS supported](https://img.shields.io/badge/macOS-supported-brightgreen)
-![linus supported](https://img.shields.io/badge/linus-supported-brightgreen)
+![linux supported](https://img.shields.io/badge/linux-supported-brightgreen)
 
 Watch(ttp) a list of webpages for changes at a set interval. Send system notifcations when they change.
 
