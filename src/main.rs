@@ -73,6 +73,8 @@ fn main() {
 
 
     loop {
+        // Check for a message on the file notifier channel
+        // If there's a message load the new config file.
         if let Ok(_) = receiver.try_recv() {
             match parse_config_file(path) {
                 Ok(cnf) => {
@@ -87,6 +89,7 @@ fn main() {
             send_notification("Reloading config", &path);
         }
 
+        // Load every site and compare with stored version
         for site in config.sites.iter() {
             println!("Loading site {}", site);
             let new_body = match download_site(&site[..]) {
